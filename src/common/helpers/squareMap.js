@@ -1,22 +1,25 @@
 module.exports = [
   {
     board: true,
-    name: 'jail',
+    name: 'free parking',
   },
   {
     board: true,
-    name: 'pall mall',
-    color: 'purple',
-    price: 5302,
+    name: 'strand',
+    color: 'red',
+    price: 3732,
   },
   {
     board: true,
-    name: 'electric company',
-    price: 55
+    name: 'fleet street',
+    color: 'red',
+    price: 2378
   },
   {
     board: true,
-    name: 'jail',
+    name: 'trafalgar square',
+    color: 'red',
+    price: 2692,
   },
   {
     board: true,

@@ -22,8 +22,8 @@ const Image = styled.img`
   float: left;
 `
 
-const Square = ({ player }) => {
-  console.log({ player })
+const Square = ({ player, info }) => {
+  console.log({ player, info })
   return <Box>{player && <Image src={avatar} />}</Box>
 }
 
