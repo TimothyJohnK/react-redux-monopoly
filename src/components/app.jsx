@@ -1,13 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
-// import { Container } from 'semantic-ui-react'
+import { Message } from 'semantic-ui-react'
 
 import Board from 'components/board.jsx'
 import Controls from 'components/controls.jsx'
 
 import background from '../assets/mono_back.png'
 
-const App = styled.div`
+const Wrapper = styled.div`
 padding: 30px;
 background-image: url('${background}');
 background-repeat: no-repeat;
@@ -19,11 +20,18 @@ const Container = styled.div`
   margin: auto;
 `
 
-export default () => (
-  <App>
+const App = ({ message }) => (
+  <Wrapper>
+    { message && <Message content= { message } /> }
     <Container>
       <Board />
       <Controls />
     </Container>
-  </App>
+  </Wrapper>
 )
+
+export default connect(
+  state => ({
+    message: state.notification.message,
+  }),
+)(App)
