@@ -23,6 +23,8 @@ const CounterButton = styled.button`
   padding: 5px;
 `
 
+const getRoll = () => Math.random() * (12 - 2) + 2
+
 class Counter extends PureComponent {
   static propTypes = {
     count: PropTypes.number.isRequired,
