@@ -33,7 +33,7 @@ export const rollDice = () => async (dispatch, getState) => {
   const dice = Math.floor(Math.random() * (12 - 2) + 2)
   dispatch(updatePlayerPosition(dice))
 
-  dispatch(showNotification(`You rolled ${dice}`))
+  dispatch(showNotification(`You Rolled ${dice}!`))
   await new Promise(resolve => setTimeout(_ => resolve(), 1500))
   dispatch(clearNotification())
 }
