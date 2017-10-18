@@ -16,18 +16,20 @@ const GridContainer = styled.div`
   background-size: contain;
 `
 
+import squareMap from '../common/helpers/squareMap'
+
 const Squares = () => {
   const arr = []
   for (let i = 0; i < 121; i++) {
     arr.push(i)
   }
-  return arr.map(i => <Square key={i} player={i === 0} />)
+  return arr.map(i => <Square key={i} player={i === 2} info={squareMap[i]} />)
 }
 
 class Board extends PureComponent {
   static propTypes = {}
 
-  render() {
+  render () {
     return <GridContainer>{Squares()}</GridContainer>
   }
 }
