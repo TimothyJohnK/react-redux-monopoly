@@ -1,0 +1,27 @@
+stages:
+  - build
+  - test
+  
+cache:
+  untracked: true
+  paths:
+    - ./node_modules/
+
+#UI BUILD
+ui tests:
+  stage: build
+  tags:
+    - docker
+  script:
+    - yarn install
+    - yarn build
+#UI BUILD
+
+#UI Unit Test
+ui tests:
+  stage: test
+  tags:
+    - docker
+  script:
+    - yarn test
+#UI End Test
