@@ -1,4 +1,5 @@
 import { setIsRolling } from 'ducks/game'
+import { showNotification, clearNotification } from 'ducks/notification'
 import squareMap from 'common/helpers/squareMap'
 
 export const initialState = {
@@ -26,10 +27,15 @@ export const updatePlayerPosition = dice => ({
 
 export const rollDice = () => async (dispatch, getState) => {
   dispatch(setIsRolling(true))
-  await new Promise(resolve => setTimeout(_ => resolve(), 2000))
+  await new Promise(resolve => setTimeout(_ => resolve(), 1500))
   dispatch(setIsRolling(false))
+
   const dice = Math.floor(Math.random() * (12 - 2) + 2)
   dispatch(updatePlayerPosition(dice))
+
+  dispatch(showNotification(`You rolled ${dice}`))
+  await new Promise(resolve => setTimeout(_ => resolve(), 1500))
+  dispatch(clearNotification())
 }
 
 export const getPlayerGridPosition = state => squareMap[state.players.position]
