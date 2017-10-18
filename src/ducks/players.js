@@ -1,33 +1,21 @@
 import { setIsRolling } from 'ducks/game'
 
 export const initialState = {
-  isActive: false,
-  turnPhase: 0,
-  position: 0
+  position: 0,
+  piece: null,
+  id: 0
 }
 
 export default function reducer (currentState = initialState, action) {
   switch (action.type) {
-    case NEXT_TURN_PHASE:
-      let nextTurnPhase = currentState.turnPhase + 1
-      if (nextTurnPhase > 1) { nextTurnPhase = 0 }
+    case UPDATE_PLAYER_POSITION:
       return {
         ...currentState,
-        turnPhase: nextTurnPhase
+        position: (currentState.position + action.dice) % 39
       }
     default:
       return currentState
   }
-}
-
-export const nextTurnPhase = () => ({ type: NEXT_TURN_PHASE })
-
-export const rollDice = () => async ({ dispatch, getState }) => {
-  dispatch(setIsRolling(true))
-  await new Promise(resolve => setTimeout(_ => resolve(), 2000))
-  const dice = Math.random() * (12 - 2) + 2
-  dispatch(setIsRolling(false))
-  dispatch(updatePlayerPosition(dice))
 }
 
 export const updatePlayerPosition = dice => ({
@@ -35,5 +23,12 @@ export const updatePlayerPosition = dice => ({
   dice
 })
 
-const NEXT_TURN_PHASE = 'next-turn-phase'
+export const rollDice = () => async ({ dispatch, getState }) => {
+  dispatch(setIsRolling(true))
+  await new Promise(resolve => setTimeout(_ => resolve(), 2000))
+  dispatch(setIsRolling(false))
+  const dice = Math.random() * (12 - 2) + 2
+  dispatch(updatePlayerPosition(dice))
+}
+
 const UPDATE_PLAYER_POSITION = 'update-player-position'

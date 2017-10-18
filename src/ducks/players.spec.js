@@ -1,19 +1,25 @@
 /* global describe, it, expect */
-import initStore from 'store'
-import { nextTurnPhase } from 'ducks/players'
+import configureStore from 'redux-mock-store'
+import { updatePlayerPosition } from 'ducks/players'
 import initialState from 'mock-states'
 
-const store = initStore()
+const mockStore = configureStore([])
+const store = mockStore(initialState)
 
-describe('next turn phase', () => {
-  it('moves player to their next turn phase', () => {
-    store.dispatch(nextTurnPhase())
+/* TODO
+  write tests for:
+    rollDice
+*/
+
+describe('updatePlayerPosition', () => {
+  it('updates player position on the board', () => {
+    store.dispatch(updatePlayerPosition(8))
 
     expect(store.getState()).toEqual({
       ...initialState,
       players: {
         ...initialState.players,
-        turnPhase: 1
+        position: 8
       }
     })
   })
