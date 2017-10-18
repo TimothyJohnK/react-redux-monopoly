@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
+import { getPlayerGridPosition } from 'ducks/players'
 import avatar from '../assets/thimble.png'
 
 const Box = styled.div`
@@ -26,5 +27,5 @@ const Square = ({ hasPlayer, info }) => {
 }
 
 export default connect((state, ownProps) => ({
-  hasPlayer: state.players.position === ownProps.index
+  hasPlayer: getPlayerGridPosition(state) === ownProps.index
 }))(Square)
