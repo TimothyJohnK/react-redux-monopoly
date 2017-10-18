@@ -18,7 +18,7 @@ const Controls = ({ rollDice, isRolling }) => (
     <Button primary disabled={isRolling} onClick={rollDice}>
       Roll Dice
     </Button>
-    {true && <img src={rollingDiceGif} style={gifStyle} />}
+    {isRolling && <img src={rollingDiceGif} style={gifStyle} />}
   </div>
 )
 
