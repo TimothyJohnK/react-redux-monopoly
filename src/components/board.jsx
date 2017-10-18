@@ -7,9 +7,10 @@ import Square from './square'
 import monopolyBoard from '../assets/monopoly_board.jpg'
 
 const GridContainer = styled.div`
+  width: 800px;
   display: grid;
-  grid-template-columns: 70px repeat(9, 40px) 70px;
-  grid-template-rows: 70px repeat(9, 40px) 70px;
+  grid-template-columns: 102px repeat(9, 64px) 102px;
+  grid-template-rows: 102px repeat(9, 64px) 102px;
   background-image: url("${monopolyBoard}");
   background-repeat: no-repeat;
   background-size: contain;
