@@ -32,6 +32,10 @@ export const rollDice = () => async (dispatch, getState) => {
   dispatch(updatePlayerPosition(dice))
 }
 
-export const getPlayerGridPosition = state => squareMap[state.players.position]
+export const getPlayerGridPosition = state => {
+  console.log('op', state.players.position)
+  console.log('sp', squareMap[state.players.position])
+  return squareMap[state.players.position]
+}
 
 const UPDATE_PLAYER_POSITION = 'update-player-position'

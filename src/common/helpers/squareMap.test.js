@@ -11,10 +11,19 @@ for (let i = 0; i < 13; i++) {
     } else {
       name = '   blank   '
     }
-    line.push(` |${name}| `)
+    // line.push(` |${name}| `)
+    line.push(` |${p}| `)
     if (line.length === 11) {
       console.log(line.join(''))
       line = []
     }
   }
 }
+
+// const miniMap = require('./squareMap')
+
+// for (let i = 0; i < 40; i++) {
+//   if (!squareMap[miniMap[i]].board) {
+//     throw new Error(`square number ${i} is in the wrong place`)
+//   }
+// }
