@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 import Square from './square'
-import monopolyBoard from '../assets/monopoly_board.jpg'
+import monopolyBoard from '../assets/monopoly_board_uk.jpg'
 
 const GridContainer = styled.div`
   width: 800px;
@@ -21,7 +21,7 @@ const Squares = () => {
   for (let i = 0; i < 121; i++) {
     arr.push(i)
   }
-  return arr.map(i => <Square key={i} />)
+  return arr.map(i => <Square key={i} player={i === 0} />)
 }
 
 class Board extends PureComponent {
