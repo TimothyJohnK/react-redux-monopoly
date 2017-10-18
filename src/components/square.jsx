@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import avatar from '../assets/thimble.png'
 
 const Box = styled.div`
-	// background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.2);
 	color: #fff;
 	border-radius: 5px;
 	// padding: 20px;

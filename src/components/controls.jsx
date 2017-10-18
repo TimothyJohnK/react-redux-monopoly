@@ -7,10 +7,10 @@ import rollingDiceGif from 'assets/rolling-dice.gif'
 
 const gifStyle = {
   position: 'absolute',
-  top: '135px',
-  width: '571px',
-  height: '571px',
-  left: '133px',
+  top: '104px',
+  width: '572px',
+  height: '572px',
+  left: '106px',
 }
 
 class Controls extends PureComponent {
@@ -18,19 +18,19 @@ class Controls extends PureComponent {
     const { rollDice, isRolling } = this.props
 
     return (
-      <Container>
-        <Button primary disabled={ isRolling } onClick={ rollDice }>Roll Dice</Button>
-        { isRolling && (
-          <img src={ rollingDiceGif } style={ gifStyle } />
-        ) }
-      </Container>
+      <div>
+        <Button primary disabled={isRolling} onClick={rollDice}>
+          Roll Dice
+        </Button>
+        {isRolling && <img src={rollingDiceGif} style={gifStyle} />}
+      </div>
     )
   }
 }
 
 export default connect(
   state => ({
-    isRolling: state.game.isRolling
+    isRolling: state.game.isRolling,
   }),
   { rollDice }
 )(Controls)
