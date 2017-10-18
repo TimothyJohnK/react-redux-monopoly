@@ -21,7 +21,7 @@ const Container = styled.div`
 const StyledMessage = styled.span`
   position: absolute;
   top: 42%;
-  left: 21%;
+  left: 220px;
   font-size: 55px;
   font-weight: bold;
   background-color: antiquewhite;
