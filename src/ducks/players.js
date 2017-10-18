@@ -23,11 +23,11 @@ export const updatePlayerPosition = dice => ({
   dice
 })
 
-export const rollDice = () => async ({ dispatch, getState }) => {
+export const rollDice = () => async (dispatch, getState) => {
   dispatch(setIsRolling(true))
-  await new Promise(resolve => setTimeout(_ => resolve(), 2000))
+  await new Promise(resolve => setTimeout(_ => resolve(), 5000))
   dispatch(setIsRolling(false))
-  const dice = Math.random() * (12 - 2) + 2
+  const dice = Math.floor(Math.random() * (12 - 2) + 2)
   dispatch(updatePlayerPosition(dice))
 }
 

@@ -82,7 +82,6 @@
     "whatwg-fetch": "^1.0.0"
   },
   "dependencies": {
-    "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.75.1"
   }
 }
