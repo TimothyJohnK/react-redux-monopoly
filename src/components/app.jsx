@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fragment, Link } from 'redux-little-router'
 import styled from 'styled-components'
-
+import { Button, Container } from 'semantic-ui-react'
 import Counter from 'components/counter.jsx'
 
 const App = styled.div`
@@ -21,6 +21,7 @@ const ListItem = styled.li`
 
 export default () =>
   <App>
+    <Container>
     <List>
       <ListItem><Link href="/react-redux-async-await-boilerplate/counter">Async Counter</Link></ListItem>
       <ListItem><Link href="/react-redux-async-await-boilerplate/foo">Foo</Link></ListItem>
@@ -38,4 +39,5 @@ export default () =>
     <Fragment forRoute="/react-redux-async-await-boilerplate/bar">
       <p>Some content could go here</p>
     </Fragment>
+    </Container>
   </App>

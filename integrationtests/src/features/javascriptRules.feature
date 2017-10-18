@@ -1,7 +1,5 @@
 Feature:
-    In order to laugh uproariously
-    As an agile developer 
-    I want to use the latest and greatest technologies
+    Initial board render
 # Background:
 #     Given I open the url "http://www.thetestroom.com/webapp/"
 # Scenario: Check that Home link works
@@ -29,7 +27,7 @@ Feature:
 
 # Scenario: Submit the form
 Background:
-    Given I open the url "http://localhost:3000/contact"
+    Given I open the url "http://localhost:3000"
 Scenario Outline:
     When I set <name> to the inputfield "[name='name_field']"
     # And  I click on the element "#rinfo"
