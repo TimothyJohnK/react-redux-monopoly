@@ -3,6 +3,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
+// Testing
+
 import initStore from 'store'
 import App from 'components/app.jsx'
 
