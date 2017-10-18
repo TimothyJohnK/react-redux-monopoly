@@ -8,7 +8,7 @@ cache:
     - ./node_modules/
 
 #UI BUILD
-ui tests:
+ui Build:
   stage: build
   script:
     - yarn install
