@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import React, { PureComponent } from 'react'
 import { Button, Container } from 'semantic-ui-react'
+
 import { rollDice } from 'ducks/players'
 import rollingDiceGif from 'assets/rolling-dice.gif'
 

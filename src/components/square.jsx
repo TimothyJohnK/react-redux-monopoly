@@ -1,5 +1,4 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -22,9 +21,10 @@ const Image = styled.img`
   float: left;
 `
 
-const Square = ({ player, info }) => {
-  console.log({ player, info })
-  return <Box>{player && <Image src={avatar} />}</Box>
+const Square = ({ hasPlayer, info }) => {
+  return <Box>{ hasPlayer && <Image src={avatar} />}</Box>
 }
 
-export default connect()(Square)
+export default connect((state, ownProps) => ({
+  hasPlayer: state.players.position === ownProps.index
+}))(Square)

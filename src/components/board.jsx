@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -23,7 +22,7 @@ const Squares = () => {
   for (let i = 0; i < 121; i++) {
     arr.push(i)
   }
-  return arr.map(i => <Square key={i} player={i === 2} info={squareMap[i]} />)
+  return arr.map(i => <Square key={i} index={i} info={squareMap[i]} />)
 }
 
 class Board extends PureComponent {
