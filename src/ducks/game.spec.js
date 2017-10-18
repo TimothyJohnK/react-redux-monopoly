@@ -1,37 +1,25 @@
-/* global describe, it, expect */
-import configureStore from 'redux-mock-store'
-import { setIsRolling, nextTurnPhase } from 'ducks/game'
-import initialState from 'mock-states'
-
-const mockStore = configureStore([])
-const store = mockStore(initialState)
-
-// describe > beforeEach > store = mockStore()
+/* global describe, it */
+import { Reducer } from 'redux-testkit'
+import gameReducer, { initialState, setIsRolling, nextTurnPhase } from 'ducks/game'
 
 describe('nextTurnPhase', () => {
   it('moves player to their next turn phase', () => {
-    store.dispatch(nextTurnPhase())
-
-    expect(store.getState()).toEqual({
+    const result = {
       ...initialState,
-      game: {
-        ...initialState.game,
-        turnPhase: 1
-      }
-    })
+      turnPhase: 1
+    }
+
+    Reducer(gameReducer).withState(initialState).expect(nextTurnPhase()).toReturnState(result)
   })
 })
 
 describe('setIsRolling', () => {
   it('updates isRolling', () => {
-    store.dispatch(setIsRolling(true))
-
-    expect(store.getState()).toEqual({
+    const result = {
       ...initialState,
-      game: {
-        ...initialState.game,
-        isRolling: true
-      }
-    })
+      isRolling: true
+    }
+
+    Reducer(gameReducer).withState(initialState).expect(setIsRolling(true)).toReturnState(result)
   })
 })
