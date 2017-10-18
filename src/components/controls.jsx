@@ -3,7 +3,7 @@ import React from 'react'
 import { Button } from 'semantic-ui-react'
 
 import { rollDice } from 'ducks/players'
-import rollingDiceGif from 'assets/rolling-dice.gif'
+import rollingDiceGif from 'assets/rolling-dice-transparent.gif'
 
 const gifStyle = {
   position: 'absolute',
