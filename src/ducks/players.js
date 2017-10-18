@@ -39,8 +39,6 @@ export const rollDice = () => async (dispatch, getState) => {
 }
 
 export const getPlayerGridPosition = state => {
-  console.log('op', state.players.position)
-  console.log('sp', squareMap[state.players.position])
   return squareMap[state.players.position]
 }
 
