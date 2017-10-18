@@ -1,4 +1,5 @@
 import { setIsRolling } from 'ducks/game'
+import squareMap from 'common/helpers/squareMap'
 
 export const initialState = {
   position: 0,
@@ -30,5 +31,7 @@ export const rollDice = () => async (dispatch, getState) => {
   const dice = Math.floor(Math.random() * (12 - 2) + 2)
   dispatch(updatePlayerPosition(dice))
 }
+
+export const getPlayerGridPosition = state => squareMap[state.players.position]
 
 const UPDATE_PLAYER_POSITION = 'update-player-position'

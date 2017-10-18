@@ -3,14 +3,14 @@ import React from 'react'
 import { Button } from 'semantic-ui-react'
 
 import { rollDice } from 'ducks/players'
-import rollingDiceGif from 'assets/rolling-dice.gif'
+import rollingDiceGif from 'assets/rolling-dice-transparent.gif'
 
 const gifStyle = {
   position: 'absolute',
-  top: '104px',
-  width: '572px',
-  height: '572px',
-  left: '106px',
+  top: '103px',
+  width: '574px',
+  height: '574px',
+  left: '105px',
 }
 
 const Controls = ({ rollDice, isRolling }) => (
