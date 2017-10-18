@@ -1,10 +1,6 @@
-/* global describe, it, expect */
-import configureStore from 'redux-mock-store'
-import { updatePlayerPosition } from 'ducks/players'
-import initialState from 'mock-states'
-
-const mockStore = configureStore([])
-const store = mockStore(initialState)
+/* global describe, it */
+import { Reducer } from 'redux-testkit'
+import playerReducer, { initialState, updatePlayerPosition } from 'ducks/players'
 
 /* TODO
   write tests for:
@@ -13,14 +9,11 @@ const store = mockStore(initialState)
 
 describe('updatePlayerPosition', () => {
   it('updates player position on the board', () => {
-    store.dispatch(updatePlayerPosition(8))
-
-    expect(store.getState()).toEqual({
+    const result = {
       ...initialState,
-      players: {
-        ...initialState.players,
-        position: 8
-      }
-    })
+      position: 8
+    }
+
+    Reducer(playerReducer).withState(initialState).expect(updatePlayerPosition(8)).toReturnState(result)
   })
 })
