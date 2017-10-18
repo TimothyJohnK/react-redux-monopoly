@@ -1,14 +1,20 @@
 // import squareMap from './squareMap'
-const squareMap = require('./squareMap')
-for (let i = 0; i < 11; i++) {
-  let line = ''
-  for (let j = 0; j < 11; j++) {
+const squareMap = require('./squareMap2')
+let line = []
+for (let i = 0; i < 13; i++) {
+  for (let j = 0; j < 10; j++) {
     const p = 10 * i + j
     const cell = squareMap[p]
-    if (cell.name) {
+    let name
+    if (cell && cell.name) {
       name = (' ' + cell.name + '        ').substring(0, 11)
+    } else {
+      name = '   blank   '
     }
-    line += ` | ${name} | `
+    line.push(` |${name}| `)
+    if (line.length === 11) {
+      console.log(line.join(''))
+      line = []
+    }
   }
-  console.log(line)
 }
