@@ -1,17 +1,35 @@
 /* global describe, it, expect */
-import initStore from 'store'
-import { setIsRolling } from 'ducks/game'
+import configureStore from 'redux-mock-store'
+import { setIsRolling, nextTurnPhase } from 'ducks/game'
 import initialState from 'mock-states'
 
-const store = initStore()
+const mockStore = configureStore([])
+const store = mockStore(initialState)
 
-describe('incrementAsync', () => {
-  it('dispatches the increment action after one second', () => {
+// describe > beforeEach > store = mockStore()
+
+describe('nextTurnPhase', () => {
+  it('moves player to their next turn phase', () => {
+    store.dispatch(nextTurnPhase())
+
+    expect(store.getState()).toEqual({
+      ...initialState,
+      game: {
+        ...initialState.game,
+        turnPhase: 1
+      }
+    })
+  })
+})
+
+describe('setIsRolling', () => {
+  it('updates isRolling', () => {
     store.dispatch(setIsRolling(true))
 
     expect(store.getState()).toEqual({
       ...initialState,
       game: {
+        ...initialState.game,
         isRolling: true
       }
     })
