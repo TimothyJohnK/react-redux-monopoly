@@ -7,10 +7,10 @@ import rollingDiceGif from 'assets/rolling-dice.gif'
 
 const gifStyle = {
   position: 'absolute',
-  top: '104px',
-  width: '572px',
-  height: '572px',
-  left: '106px',
+  top: '103px',
+  width: '574px',
+  height: '574px',
+  left: '105px',
 }
 
 const Controls = ({ rollDice, isRolling }) => (
@@ -18,7 +18,7 @@ const Controls = ({ rollDice, isRolling }) => (
     <Button primary disabled={isRolling} onClick={rollDice}>
       Roll Dice
     </Button>
-    {isRolling && <img src={rollingDiceGif} style={gifStyle} />}
+    {true && <img src={rollingDiceGif} style={gifStyle} />}
   </div>
 )
 
