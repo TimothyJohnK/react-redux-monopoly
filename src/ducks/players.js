@@ -25,7 +25,7 @@ export const updatePlayerPosition = dice => ({
   dice
 })
 
-export const rollDice = () => async (dispatch, getState) => {
+export const rollDice = () => async dispatch => {
   dispatch(setIsRolling(true))
   await new Promise(resolve => setTimeout(_ => resolve(), 1500))
   dispatch(setIsRolling(false))
