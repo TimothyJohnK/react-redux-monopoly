@@ -3,5 +3,7 @@ jest
 npm-debug.log*
 .DS_Store
 
+bundle.js
+
 .#*
 *.org
