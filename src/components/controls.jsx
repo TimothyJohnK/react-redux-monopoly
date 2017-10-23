@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import styled from 'styled-components'
 
 import { rollDice } from 'ducks/player'
 import rollingDiceGif from 'assets/rolling-dice-transparent.gif'
@@ -12,6 +12,20 @@ const gifStyle = {
   height: '574px',
   left: '105px',
 }
+
+const Button = styled.div`
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const Controls = ({ rollDice, isRolling }) => (
   <div>
