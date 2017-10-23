@@ -7,10 +7,8 @@ import avatar from '../assets/thimble.png'
 
 const Box = styled.div`
 	background: rgba(255,255,0,${props => (props.hasPlayer ? 0.2 : 0)});
-	// color: #fff;
 	border-radius: 5px;
 	font-size: 150%;
-  }
 `
 
 const Image = styled.img`
@@ -20,10 +18,14 @@ const Image = styled.img`
   float: left;
 `
 
-const Square = ({ hasPlayer, info }) => {
-  return <Box hasPlayer={hasPlayer}>{hasPlayer && <Image src={avatar} />}</Box>
-}
+const Square = ({ hasPlayer, info }) => (
+  <Box hasPlayer={ hasPlayer }>
+    { hasPlayer && <Image src={ avatar } /> }
+  </Box>
+)
 
-export default connect((state, ownProps) => ({
-  hasPlayer: getPlayerGridPosition(state) === ownProps.index,
-}))(Square)
+export default connect(
+  (state, ownProps) => ({
+    hasPlayer: getPlayerGridPosition(state) === ownProps.index
+  })
+)(Square)

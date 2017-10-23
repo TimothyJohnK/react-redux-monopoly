@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
+import React from 'react'
 import styled from 'styled-components'
 
 import Square from './square'
 import monopolyBoard from '../assets/monopoly_board_uk.jpg'
+import squareMap from '../common/helpers/squareMap'
 
 const GridContainer = styled.div`
   width: 800px;
@@ -15,22 +15,16 @@ const GridContainer = styled.div`
   background-size: contain;
 `
 
-import squareMap from '../common/helpers/squareMap'
-
 const Squares = () => {
   const arr = []
   for (let i = 0; i < 121; i++) {
     arr.push(i)
   }
-  return arr.map(i => <Square key={i} index={i} info={squareMap[i]} />)
+  return arr.map(i => <Square key={ i } index={ i } info={ squareMap[i] } />)
 }
 
-class Board extends PureComponent {
-  static propTypes = {}
+const Board = () => (
+  <GridContainer>{ Squares() }</GridContainer>
+)
 
-  render () {
-    return <GridContainer>{Squares()}</GridContainer>
-  }
-}
-
-export default connect()(Board)
+export default Board

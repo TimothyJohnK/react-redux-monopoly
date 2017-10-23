@@ -25,14 +25,15 @@ const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `
 
 const Controls = ({ rollDice, isRolling }) => (
   <div>
-    <Button primary disabled={isRolling} onClick={rollDice}>
+    <Button primary disabled={ isRolling } onClick={ rollDice }>
       Roll Dice
     </Button>
-    {isRolling && <img src={rollingDiceGif} style={gifStyle} />}
+    {isRolling && <img src={ rollingDiceGif } style={ gifStyle } />}
   </div>
 )
 
