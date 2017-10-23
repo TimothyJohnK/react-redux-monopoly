@@ -1,4 +1,4 @@
-import { initialState as playerState } from 'ducks/players'
+import { initialState as playerState } from 'ducks/player'
 import { initialState as gameState } from 'ducks/game'
 
 export default {

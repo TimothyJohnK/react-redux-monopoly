@@ -3,9 +3,7 @@ import { showNotification, clearNotification } from 'ducks/notification'
 import squareMap from 'common/helpers/squareMap'
 
 export const initialState = {
-  position: 0,
-  piece: null,
-  id: 0
+  position: 0
 }
 
 export default function reducer (currentState = initialState, action) {
@@ -39,7 +37,7 @@ export const rollDice = () => async dispatch => {
 }
 
 export const getPlayerGridPosition = state => {
-  return squareMap[state.players.position]
+  return squareMap[state.player.position]
 }
 
 const UPDATE_PLAYER_POSITION = 'update-player-position'

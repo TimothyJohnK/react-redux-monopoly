@@ -1,17 +1,6 @@
 /* global describe, it */
 import { Reducer } from 'redux-testkit'
-import gameReducer, { initialState, setIsRolling, nextTurnPhase } from 'ducks/game'
-
-describe('nextTurnPhase', () => {
-  it('moves player to their next turn phase', () => {
-    const result = {
-      ...initialState,
-      turnPhase: 1
-    }
-
-    Reducer(gameReducer).withState(initialState).expect(nextTurnPhase()).toReturnState(result)
-  })
-})
+import gameReducer, { initialState, setIsRolling } from 'ducks/game'
 
 describe('setIsRolling', () => {
   it('updates isRolling', () => {
