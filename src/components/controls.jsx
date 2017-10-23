@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-import { rollDice } from 'ducks/players'
+import { rollDice } from 'ducks/player'
 import rollingDiceGif from 'assets/rolling-dice-transparent.gif'
 
 const gifStyle = {

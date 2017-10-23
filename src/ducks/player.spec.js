@@ -1,6 +1,6 @@
 /* global describe, it */
 import { Reducer } from 'redux-testkit'
-import playerReducer, { initialState, updatePlayerPosition } from 'ducks/players'
+import playerReducer, { initialState, updatePlayerPosition } from 'ducks/player'
 
 /* TODO
   write tests for:

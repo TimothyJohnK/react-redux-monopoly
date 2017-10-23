@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
-import { getPlayerGridPosition } from 'ducks/players'
+import { getPlayerGridPosition } from 'ducks/player'
 import avatar from '../assets/thimble.png'
 
 const Box = styled.div`
